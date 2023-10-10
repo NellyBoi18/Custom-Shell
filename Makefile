@@ -1,0 +1,29 @@
+# Variables
+CC = gcc
+CFLAGS = -Wall -Werror -pedantic -std=gnu18 -O
+LOGIN = nlu
+SUBMITPATH = ~cs537-1/handin/$(LOGIN)/p3
+
+# Targets
+.PHONY: all
+
+all: wsh
+
+wsh: wsh.c wsh.h
+	$(CC) $(CFLAGS) $^ -o $@
+
+run: wsh
+	./wsh
+
+pack: login.tar.gz
+
+$(LOGIN).tar.gz: wsh.c wsh.h Makefile README.md
+	tar -czvf $@ $^
+
+submit: pack
+	cp login.tar.gz $(SUBMITPATH)
+
+clean:
+	rm -f wsh login.tar.gz
+
+.PHONY: clean
