@@ -15,15 +15,15 @@ wsh: wsh.c wsh.h
 run: wsh
 	./wsh
 
-pack: login.tar.gz
+pack: $(LOGIN).tar.gz
 
 $(LOGIN).tar.gz: wsh.c wsh.h Makefile README.md
 	tar -czvf $@ $^
 
 submit: pack
-	cp login.tar.gz $(SUBMITPATH)
+	cp $(LOGIN).tar.gz $(SUBMITPATH)
 
 clean:
-	rm -f wsh login.tar.gz
+	rm -f wsh $(LOGIN).tar.gz
 
 .PHONY: clean
