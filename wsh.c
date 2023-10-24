@@ -6,6 +6,7 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 #include <errno.h>
+// #include "wsh.h"
 
 // Struct to store background jobs
 typedef struct { 
