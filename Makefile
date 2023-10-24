@@ -2,7 +2,7 @@
 CC = gcc
 CFLAGS = -Wall -Werror -pedantic -std=gnu18 -O
 LOGIN = nlu
-SUBMITPATH = ~cs537-1/handin/$(LOGIN)/p3
+SUBMITPATH = ~cs537-1/handin/$(LOGIN)/P3
 
 # Targets
 .PHONY: all
